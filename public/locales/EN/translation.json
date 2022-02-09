@@ -1,0 +1,25 @@
+{
+    "Data": {
+        "Header": {
+            "1":"MAIN",
+            "2":"WHO WE ARE?",
+            "3":"CONTACT"
+        },
+        "Contact": {
+            "1":"Name",
+            "2":"Email Address",
+            "3":"Last Name",
+            "4":"Select the position to be filled:",
+            "5":"--Power Position--",
+            "6":"Delivery/Driver - Amazon",
+            "7":"Delivery/Driver - Chronopost",
+            "8":"Sex:",
+            "9":"Male",
+            "10":"Female",
+            "11":"Your Message:",
+            "12":"Agree to terms and conditions",
+            "13":"Send Message"
+
+        }
+    }
+}

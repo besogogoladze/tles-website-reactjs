@@ -1,0 +1,25 @@
+{
+    "Data": {
+        "Header": {
+            "1":"ACCUEIL",
+            "2":"QUI SOMMES-NOUS?",
+            "3":"CONTACT"
+        },
+        "Contact": {
+            "1":"Nom",
+            "2":"Adresse e-mail",
+            "3":"Nom De Famille",
+            "4":"Sélectionnez le poste à pourvoir:",
+            "5":"--Poste à pourvoir--",
+            "6":"Livreur/Chauffeur - Amazon",
+            "7":"Livreur/Chauffeur - Chronopost",
+            "8":"Sexe:",
+            "9":"Masculin",
+            "10":"Feminin",
+            "11":"Votre message:",
+            "12":"Accepter les termes et conditions",
+            "13":"Envoyer"
+
+        }
+    }
+}
