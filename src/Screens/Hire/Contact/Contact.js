@@ -57,7 +57,7 @@ function FormExample() {
   return (
     <div>
       <Form className='border border-2 p-2' noValidate validated={validated} onSubmit={handleSubmit}>
-        <h1 className='text-light'>Contact</h1>
+        <h1 className='text-dark text-center'>Contact</h1>
         <Row className="mb-3">
           <Form.Group md="4" controlId="validationCustom01">
             <Form.Label>{t('Data.Contact.1')}</Form.Label>
