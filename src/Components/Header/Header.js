@@ -35,8 +35,8 @@ function Header() {
                                 <div className="align-center">
                                     <NavLink className="bg-transparent" exact to="/"><img className="fit-picture" src={logo} alt="Logo TLE" /></NavLink>
                                 </div>
-                            <li className="menu__group"><NavLink exact to="/Hire" className="menu__link r-link text-underlined">Hire</NavLink></li>
-                            <li className="menu__group"><NavLink exact to="/ContactUs" className="menu__link r-link text-underlined">{t('Data.Header.3')}</NavLink></li>
+                            <li className="menu__group"><NavLink exact to="/Hire" className="menu__link r-link text-underlined">{t('Data.Header.3')}</NavLink></li>
+                            <li className="menu__group"><NavLink exact to="/ContactUs" className="menu__link r-link text-underlined">{t('Data.Header.4')}</NavLink></li>
                             <li className={`menu__group translate_section ${isActive ? 'languages': 'languagesOff'}`}>
                                 <div className="languageButton ml-4">
                                     <button className='r-link lang-h btn' onClick={() => handleClick('fr')}>
