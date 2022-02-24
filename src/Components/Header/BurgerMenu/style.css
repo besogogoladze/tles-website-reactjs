@@ -1,0 +1,21 @@
+.bm-burger-bars {
+    background: darkseagreen;
+}
+#react-burger-menu-btn {
+  width: 20px !important;
+  height: 20px !important;
+  position: relative !important;
+}
+.bm-burger-button {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.bm-burger-bars {
+  width: 20px;
+  height: 20px;
+}
+.bm-menu {
+  border-radius: 0.5rem 0 0 2.8rem;
+}

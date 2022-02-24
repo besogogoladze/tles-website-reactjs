@@ -39,3 +39,17 @@
     border-radius: 5rem;
     background-color: rebeccapurple;
 }
+.burgerDisplay {
+    display: none !important;
+}
+.bm-overlay {
+    background: none !important;
+}
+@media screen and (max-width: 850px) {
+    .burgerDisplay {
+        display: flex !important;
+    }
+    .menuDisplay {
+        display: none;
+    }
+}
