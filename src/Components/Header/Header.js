@@ -29,8 +29,13 @@ function Header() {
     
 
   return <div>
-        <div className="burgerDisplay d-flex justify-content-end align-items-center m-2">
-            <BurgerMenu className="position-relative "/>
+        <div className="burgerDisplay d-flex justify-content-between align-items-center w-100">
+            <div className="d-flex justify-content-center align-items-center w-100">
+                <NavLink className="bg-transparent" exact to="/"><img className="fit-picture" src={logo} alt="Logo TLE" /></NavLink>
+            </div>
+            <div className="d-flex justify-content-end align-items-center m-2">
+                <BurgerMenu className="position-relative "/>
+            </div>
         </div>
         <main className="menuDisplay">
             <header>

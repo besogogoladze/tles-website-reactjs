@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import emailjs from "emailjs-com"; 
 import emailAudio0 from "../../../Sounds/email.mp3"
 import { useTranslation } from 'react-i18next';
-import { Form, InputGroup, Row } from 'react-bootstrap';
+import { Col, Form, InputGroup, Row, Toast } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-
+import "./style.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCheck} from '@fortawesome/free-solid-svg-icons';
 function Contact() {
-  // const [value, setValue] = React.useState('');
+
+  const [validated, setValidated] = useState(false);
+  const [show, setShow] = useState(false);
 
   const {t} = useTranslation();
 
@@ -14,24 +18,27 @@ function Contact() {
 
   function emailSend() {
     emailAudio.play();
+    setShow(true)
   }
 
-  // const handleChange = (event) => {
-  //   setValue(event.target.value);
-  // };
-
-//   function sendEmail(e) {
-//     e.preventDefault();
-//     emailjs.sendForm('service_wxbc7no', "template_xxz486l", e.target, "user_2SQWy9hxYngZewLTbgpkm") 
-//     .then((result) => {
-//         console.log(result.text);
-//     }, (error) => {
-//         console.log(error.text);
-//     });
-//     e.target.reset()
-// }
 function FormExample() {
-  const [validated, setValidated] = useState(false);
+
+  function Example() {
+  
+    return (
+      <Row className="bg-light position-fixed end-30 top-150">
+        <Col className="w-100" xs={6}>
+          <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+            <Toast.Header>
+              <FontAwesomeIcon icon={faCheck} className="text-light bg-success fontSize-xLarge rounded p-1" />
+              <strong className="me-auto ms-1">Successful</strong>
+            </Toast.Header>
+            <Toast.Body>You have sent an email successful!!!</Toast.Body>
+          </Toast>
+        </Col>
+      </Row>
+    );
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -49,6 +56,7 @@ function FormExample() {
       });
       event.target.reset();
       emailSend();
+      Example();
     }
     setValidated(true);
 
@@ -73,7 +81,7 @@ function FormExample() {
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
           <Form.Group md="4" controlId="validationCustom02">
-            <Form.Label>Last name</Form.Label>
+            <Form.Label>{t('Data.Contact.3')}</Form.Label>
             <Form.Control
               required
               type="text"
@@ -98,7 +106,7 @@ function FormExample() {
                 name="email"
               />
               <Form.Control.Feedback type="invalid">
-                Please choose a username.
+                Please choose a Email.
               </Form.Control.Feedback>
             </InputGroup>
           </Form.Group>
@@ -112,16 +120,18 @@ function FormExample() {
             feedbackType="invalid">
           {['radio'].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
-              <Form.Label name="sexe" className='mt-2'>{t('Data.Contact.8')}</Form.Label>
+              <Form.Label name="sex" className='mt-2'>{t('Data.Contact.8')}</Form.Label>
               <Form.Check
                 label={t('Data.Contact.9')}
-                name="sexe"
+                value={t('Data.Contact.9')}
+                name="sex"
                 type={type}
                 id={`default-${type}-1`}
               />
               <Form.Check
                 label={t('Data.Contact.10')}
-                name="sexe"
+                value={t('Data.Contact.10')}
+                name="sex"
                 type={type}
                 id={`default-${type}-2`}
               />
@@ -147,6 +157,7 @@ function FormExample() {
         </Form.Group>
         <Button type="submit">{t('Data.Contact.13')}</Button>
       </Form>
+      <Example />
     </div>
   );
 }
@@ -159,45 +170,67 @@ function FormExample() {
 
 export default Contact;
 
-        // <div className="container">
-        //   <form onSubmit={sendEmail}>
-        //     <div className="row pt-5 mx-auto w-100">
-        //       <div className="col-8 form-group mx-auto w-100">
-        //           <input type="text" onChange={handleChange} value={value} className="form-control" placeholder={t('Data.Contact.1')} name="name"/>
-        //       </div>
-        //       <div className="col-8 form-group pt-3 mx-auto w-100">
-        //           <input type="email" onChange={handleChange} value={value} className="form-control" placeholder={t('Data.Contact.2')} name="email"/>
-        //       </div>
-        //       <div className="col-8 form-group pt-3 mx-auto w-100">
-        //           <input type="text" onChange={handleChange} value={value} className="form-control" placeholder={t('Data.Contact.3')} name="subject"/>
-        //       </div>
-        //       <div className="col-8 form-group pt-3 mx-auto w-100">
-        //         <label>{t('Data.Contact.4')}</label>
-        //         <select defaultValue={"selected"} name="poste" id="poste-select" className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        //           <option value="selected" disabled >{t('Data.Contact.5')}</option>
-        //           <option onChange={handleChange} value={value}>{t('Data.Contact.6')}</option>
-        //           <option onChange={handleChange} value={value}>{t('Data.Contact.7')}</option>
-        //         </select>
-        //       </div>
-        //       <div className="col-8 form-group pt-3 mx-auto w-100">
-        //         <p className='mb-0'>{t('Data.Contact.8')}</p>
-        //         <div className='d-flex align-items-start flex-column'>
-        //           <div>
-        //             <input onChange={handleChange} name="sexe" type="radio" value={value} />
-        //             <label className='ps-2'>{t('Data.Contact.9')}</label>
-        //           </div>
-        //           <div>
-        //             <input onChange={handleChange} name="sexe" type="radio" value={value} />
-        //             <label className='ps-2'>{t('Data.Contact.10')}</label>
-        //           </div>
-        //         </div>
-        //       </div>
-        //       <div className="col-8 form-group pt-3 mx-auto w-100">
-        //           <textarea onChange={handleChange} value={value} className="form-control" id="" cols="30" rows="8" placeholder={t('Data.Contact.11')} name="message"></textarea>
-        //       </div>
-        //       <div className="col-8 pt-3 mx-auto w-100">
-        //           <input disabled={!value} type="submit" onClick={emailSend} className="btn btn-info" value={t('Data.Contact.12')}></input>
-        //       </div>
-        //     </div>
-        //   </form>
-        // </div>
+
+  // const [value, setValue] = React.useState('');
+
+
+  
+  // const handleChange = (event) => {
+  //   setValue(event.target.value);
+  // };
+
+  //   function sendEmail(e) {
+  //     e.preventDefault();
+  //     emailjs.sendForm('service_wxbc7no', "template_xxz486l", e.target, "user_2SQWy9hxYngZewLTbgpkm") 
+  //     .then((result) => {
+  //         console.log(result.text);
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  //     e.target.reset()
+  // }
+
+
+
+  // <div className="container">
+  //   <form onSubmit={sendEmail}>
+  //     <div className="row pt-5 mx-auto w-100">
+  //       <div className="col-8 form-group mx-auto w-100">
+  //           <input type="text" onChange={handleChange} value={value} className="form-control" placeholder={t('Data.Contact.1')} name="name"/>
+  //       </div>
+  //       <div className="col-8 form-group pt-3 mx-auto w-100">
+  //           <input type="email" onChange={handleChange} value={value} className="form-control" placeholder={t('Data.Contact.2')} name="email"/>
+  //       </div>
+  //       <div className="col-8 form-group pt-3 mx-auto w-100">
+  //           <input type="text" onChange={handleChange} value={value} className="form-control" placeholder={t('Data.Contact.3')} name="subject"/>
+  //       </div>
+  //       <div className="col-8 form-group pt-3 mx-auto w-100">
+  //         <label>{t('Data.Contact.4')}</label>
+  //         <select defaultValue={"selected"} name="poste" id="poste-select" className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  //           <option value="selected" disabled >{t('Data.Contact.5')}</option>
+  //           <option onChange={handleChange} value={value}>{t('Data.Contact.6')}</option>
+  //           <option onChange={handleChange} value={value}>{t('Data.Contact.7')}</option>
+  //         </select>
+  //       </div>
+  //       <div className="col-8 form-group pt-3 mx-auto w-100">
+  //         <p className='mb-0'>{t('Data.Contact.8')}</p>
+  //         <div className='d-flex align-items-start flex-column'>
+  //           <div>
+  //             <input onChange={handleChange} name="sexe" type="radio" value={value} />
+  //             <label className='ps-2'>{t('Data.Contact.9')}</label>
+  //           </div>
+  //           <div>
+  //             <input onChange={handleChange} name="sexe" type="radio" value={value} />
+  //             <label className='ps-2'>{t('Data.Contact.10')}</label>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div className="col-8 form-group pt-3 mx-auto w-100">
+  //           <textarea onChange={handleChange} value={value} className="form-control" id="" cols="30" rows="8" placeholder={t('Data.Contact.11')} name="message"></textarea>
+  //       </div>
+  //       <div className="col-8 pt-3 mx-auto w-100">
+  //           <input disabled={!value} type="submit" onClick={emailSend} className="btn btn-info" value={t('Data.Contact.12')}></input>
+  //       </div>
+  //     </div>
+  //   </form>
+  // </div>

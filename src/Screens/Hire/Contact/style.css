@@ -1,0 +1,17 @@
+.top-150 {
+    top: 150px !important;
+}
+.end-30 {
+    right: 30px !important;
+}
+.fontSize-xLarge {
+    font-size: x-large;
+}
+@media screen and (max-width: 850px) {
+    .top-150 {
+        top: 100px !important;
+    }
+    .end-30 {
+        right: 0px !important;
+    }
+}

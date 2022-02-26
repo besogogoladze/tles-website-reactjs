@@ -21,13 +21,10 @@ function BurgerMenu() {
 
 
   return (
-        <Menu isOpen={false} width={ '50%' } right >
+        <Menu isOpen={false} width={ '70%' } right >
             <div className=" h-100">
                     <nav className="h-100 page__menu menu">
-                        <ul className="menu__list r-list w-100 h-100 flex-column justify-content-around align-items-center">
-                            <div className="align-center">
-                                <NavLink className="bg-transparent" exact to="/"><img className="fit-picture" src={logo} alt="Logo TLE" /></NavLink>
-                            </div>
+                        <ul className="menu__list r-list w-100 h-75 flex-column justify-content-around align-items-center">
                             <li className="menu__group"><NavLink exact to="/" className="menu__link r-link text-underlined">{t('Data.Header.1')}</NavLink></li>
                             <li className="menu__group"><NavLink exact to="Who-we-are" className="menu__link r-link text-underlined">{t('Data.Header.2')}</NavLink></li>
                             <li className="menu__group"><NavLink exact to="/Hire" className="menu__link r-link text-underlined">{t('Data.Header.3')}</NavLink></li>
