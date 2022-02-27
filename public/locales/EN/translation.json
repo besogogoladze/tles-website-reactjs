@@ -21,6 +21,9 @@
             "12":"Agree to terms and conditions",
             "13":"Send Message"
 
+        },
+        "ErrorPage": {
+            "1":"Oops... The page not found!!!"
         }
     }
 }

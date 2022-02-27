@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import ContactUs from './Screens/ContactUs/ContactUs';
 import Who_we_are from './Screens/Who-we-are/Who-we-are';
 import Hire from './Screens/Hire/Hire';
+import Error404 from './Screens/Error404/Error404';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Who-we-are" exact component={Who_we_are} />
           <Route path="/Hire" exact component={Hire} />
           <Route path="/ContactUs" exact component={ContactUs} />
+          <Route component={Error404} />
         </Switch>
         <Footer/>
       </Router>

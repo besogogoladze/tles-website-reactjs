@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { push as Menu } from 'react-burger-menu';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
-import logo from '../../../images/logo-tle.png'
 import './style.css';
 
 function BurgerMenu() {

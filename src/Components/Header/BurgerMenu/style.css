@@ -1,5 +1,6 @@
 .bm-burger-bars {
-    background: darkseagreen;
+  background: green;
+  border-radius: 2rem;
 }
 #react-burger-menu-btn {
   width: 20px !important;
