@@ -14,9 +14,20 @@
   align-items: center;
 }
 .bm-burger-bars {
-  width: 20px;
-  height: 20px;
+  width: 25px !important;
+  height: 25% !important;
 }
 .bm-menu {
   border-radius: 0.5rem 0 0 2.8rem;
+}
+.bm-cross {
+  background-color: green;
+  height: 30px !important;
+}
+.bm-cross-button {
+  top: 25px !important;
+  height: 35px !important;
+}
+.bm-menu-wrap {
+  top: 0px;
 }

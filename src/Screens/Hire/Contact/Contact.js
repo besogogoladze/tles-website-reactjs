@@ -63,11 +63,11 @@ function FormExample() {
   };
 
   return (
-    <div>
-      <Form className='border border-2 p-2' noValidate validated={validated} onSubmit={handleSubmit}>
+    <>
+      <Form className='border border-2 p-2 d-flex flex-column align-items-center' noValidate validated={validated} onSubmit={handleSubmit}>
         <h1 className='text-dark text-center'>Contact</h1>
-        <Row className="mb-3">
-          <Form.Group md="4" controlId="validationCustom01">
+        <Row className="mb-3 w-100">
+          <Form.Group md="4" className='w-100 p-0' controlId="validationCustom01">
             <Form.Label>{t('Data.Contact.1')}</Form.Label>
             <Form.Control
               required
@@ -80,7 +80,7 @@ function FormExample() {
             </Form.Control.Feedback>
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group md="4" controlId="validationCustom02">
+          <Form.Group md="4" className='w-100 p-0' controlId="validationCustom02">
             <Form.Label>{t('Data.Contact.3')}</Form.Label>
             <Form.Control
               required
@@ -93,7 +93,7 @@ function FormExample() {
             </Form.Control.Feedback>
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group md="4" controlId="validationCustomUsername">
+          <Form.Group md="4" className='w-100 p-0' controlId="validationCustomUsername">
             <Form.Label>Email</Form.Label>
             <InputGroup hasValidation>
               <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -116,7 +116,7 @@ function FormExample() {
           <option>{t('Data.Contact.6')}</option>
           <option>{t('Data.Contact.7')}</option>
         </Form.Select>
-        <Form.Check feedback="You must agree before submitting."
+        <Form.Check className='w-100' feedback="You must agree before submitting."
             feedbackType="invalid">
           {['radio'].map((type) => (
             <div key={`inline-${type}`} className="mb-3">
@@ -141,10 +141,10 @@ function FormExample() {
             Please choose your Sex!
           </Form.Control.Feedback>
         </Form.Check>
-        <Form.Check>
+        <Form.Check className='w-100'>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>{t('Data.Contact.11')}</Form.Label>
-            <Form.Control name="message" as="textarea" rows={3} />
+            <Form.Control placeholder="max length 150..." maxLength="50" name="message" as="textarea" rows={3} />
           </Form.Group>
         </Form.Check>
         <Form.Group className="mb-3">
@@ -158,7 +158,7 @@ function FormExample() {
         <Button type="submit">{t('Data.Contact.13')}</Button>
       </Form>
       <Example />
-    </div>
+    </>
   );
 }
 

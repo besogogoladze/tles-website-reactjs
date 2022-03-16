@@ -34,7 +34,7 @@ function Header() {
                 <NavLink className="bg-transparent" exact to="/"><img className="fit-picture" src={logo} alt="Logo TLE" /></NavLink>
             </div>
             <div className="d-flex justify-content-end align-items-center m-2">
-                <BurgerMenu className="position-relative "/>
+                <BurgerMenu className="position-relative"/>
             </div>
         </div>
         <main className="menuDisplay">

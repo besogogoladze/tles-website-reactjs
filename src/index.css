@@ -5,7 +5,8 @@ button:focus {
 }
 
 .active {
-    background-color: darkseagreen;
+    background-color: darkgreen;
+    color: #fff !important;
 }
 
 .fit-picture {
@@ -23,7 +24,7 @@ button:focus {
 }
 
 .r-link[href] {
-    color: var(--rLinkColor) !important;
+    color: var(--rLinkColor);
     text-decoration: var(--rLinkTextDecoration, none) !important;
 }
 
@@ -35,9 +36,16 @@ button:focus {
 }
 
 .max-height-480 {
-    height: 480px;
+    max-height: 480px;
 }
-
+.carousel-control-next-icon {
+    background-color: darkgreen;
+    border-radius: 1rem;
+}
+.carousel-control-prev-icon {
+    background-color: darkgreen;
+    border-radius: 1rem;
+}
 
 
 
@@ -47,6 +55,7 @@ button:focus {
 
 .menu__link {
     display: var(--menuLinkDisplay, block);
+    border-radius: 0.2rem;
 }
 
 
@@ -71,9 +80,14 @@ button:focus {
 .menu__list {
     display: flex;
 }
+.menu__list__burger {
+    display: flex;
+    position: absolute;
+    top: 8%;
+}
 
 .menu__link {
-    padding: var(--menuLinkPadding, 1.5rem 2.5rem);
+    padding: var(--menuLinkPadding, 1rem);
     font-weight: 700;
     text-transform: uppercase;
 }
